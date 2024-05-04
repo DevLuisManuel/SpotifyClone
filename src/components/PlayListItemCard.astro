@@ -17,7 +17,10 @@ const {
 const artistString = artists.join(", ")
 ---
 <a href={`/playlist/${id}`}
-   class="playlist-item transition-300 overflow-hidden flex relative p-2 gap-2 pb-6 rounded-md hover:bg-zinc-800 shadow-lg hover:shadow-xl bg-zinc-500/30 w-44 flex-col">
+   class="playlist-item transition-300 overflow-hidden flex relative p-2 gap-2 pb-6 rounded-md
+   hover:bg-zinc-800 shadow-lg hover:shadow-xl bg-zinc-500/30 w-44 flex-col"
+   transition:name=`playlist ${id} box`
+>
     <picture class="aspect-square w-full h-auto flex-none">
         <img
                 src={cover}
@@ -27,10 +30,16 @@ const artistString = artists.join(", ")
         />
     </picture>
     <div class="flex flex-auto flex-col px-2">
-        <h4 class="text-white text-sm">
+        <h4
+                class="text-white text-sm"
+                transition:name=`playlst ${id} title`
+        >
             {title}
         </h4>
-        <span class="text-xs text-gray-400">
+        <span
+                class="text-xs text-gray-400"
+                transition:name=`playlst ${id} artist`
+        >
             {artistString}
         </span>
     </div>
